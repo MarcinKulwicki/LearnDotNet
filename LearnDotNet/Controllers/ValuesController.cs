@@ -19,7 +19,7 @@ namespace LearnDotNet.Controllers
         {
             this._context = context;
         }
-        // GET api/values
+        [AllowAnonymous]
         [HttpGet]
         public async Task<IActionResult> GetValues()
         {
@@ -28,7 +28,6 @@ namespace LearnDotNet.Controllers
             return Ok(values);
         }
 
-        // GET api/values/5
         [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<IActionResult> GetValues(int id)
